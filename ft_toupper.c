@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 13:08:58 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 13:44:37 by joalmeid         ###   ########.fr       */
+/*   Created: 2022/05/10 13:15:30 by joalmeid          #+#    #+#             */
+/*   Updated: 2022/05/10 13:30:46 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_toupper(int c)
 {
-	size_t	length;
+	int	c_upp;
 
-	length = 0;
-	while (s[length] != '\0')
-		length ++;
-	return (length);
+	c_upp = c;
+	if (c >= 97 && c <= 122)
+	{
+		c_upp -= 32;
+	}
+	return (c_upp);
 }
 
 int	main(void)
 {
-	char	*s = "ola!";
-	int		len = 0;
+	char	c = 0;
+	int		i = 0;
 
-	len = strlen(s);
-	printf("the length is %d.\n", len);
+	while (i <= 127)
+	{
+		printf("%d char: %c, toupper returns: %c\n", i, c, ft_toupper(c));
+		i ++;
+		c = i;
+	}
 }
