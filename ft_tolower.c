@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:32:56 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 13:41:13 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:49:06 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	ft_tolower(int c)
 	int	c_upp;
 
 	c_upp = c;
-	if (c >= 97 && c <= 122)
+	if (c >= 65 && c <= 90)
 	{
-		c_upp -= 32;
+		c_upp += 32;
 	}
 	return (c_upp);
 }
