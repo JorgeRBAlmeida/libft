@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 15:28:26 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 10:55:30 by joalmeid         ###   ########.fr       */
+/*   Created: 2022/05/10 09:45:13 by joalmeid          #+#    #+#             */
+/*   Updated: 2022/05/10 09:48:52 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
 
-int	ft_isalpha(int c)
-{
-	if ((c < 65 || c > 90)
-		&& (c < 97 || c > 122))
-	{
-		return (0);
-	}
-	return (1);
-}
-
-int	main(void)
-{
-	char	c;
-	int		i;
-
-	i = 0;
-	c = 0;
-	while (i <= 127)
-	{
-		printf("%d char: %c isalpha? %i\n", i, c, isalpha(c));
-		printf("%d char: %c ft_isalpha? %i\n", i, c, ft_isalpha(c));
-		i ++;
-		c = i;
-	}
-}
+int		ft_isalpha(int c);
+size_t	ft_strlen(const char *s);

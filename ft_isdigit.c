@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 15:28:26 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 10:55:30 by joalmeid         ###   ########.fr       */
+/*   Created: 2022/05/10 10:57:37 by joalmeid          #+#    #+#             */
+/*   Updated: 2022/05/10 11:12:35 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
-	if ((c < 65 || c > 90)
-		&& (c < 97 || c > 122))
-	{
-		return (0);
-	}
-	return (1);
-}
-
-int	main(void)
-{
-	char	c;
-	int		i;
-
-	i = 0;
-	c = 0;
-	while (i <= 127)
-	{
-		printf("%d char: %c isalpha? %i\n", i, c, isalpha(c));
-		printf("%d char: %c ft_isalpha? %i\n", i, c, ft_isalpha(c));
-		i ++;
-		c = i;
-	}
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
