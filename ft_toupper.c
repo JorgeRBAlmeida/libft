@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:15:30 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 13:30:46 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/11 10:17:33 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ int	ft_toupper(int c)
 
 	c_upp = c;
 	if (c >= 97 && c <= 122)
-	{
 		c_upp -= 32;
-	}
 	return (c_upp);
 }
 
