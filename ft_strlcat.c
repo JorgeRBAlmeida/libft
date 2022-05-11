@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:42:50 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/11 14:54:05 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:56:21 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(void)
 	char	dst[20] = "teste";
 	char	*src = "42rio";
 	size_t	rtn;
-	
+
 	printf("valor inicial dst: '%s'\tvalor src: '%s'\n", dst, src);
 	rtn = ft_strlcat(dst, src, 20);
 	printf("valor final dst: '%s'\tvalor retorno ft_strlcat: '%zu'\n", dst, rtn);
