@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 13:08:58 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 13:44:37 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:40:12 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ size_t	ft_strlen(const char *s)
 	return (length);
 }
 
-int	main(void)
+/*int	main(void)
 {
 	char	*s = "ola!";
 	int		len = 0;
 
 	len = strlen(s);
 	printf("the length is %d.\n", len);
-}
+}*/
