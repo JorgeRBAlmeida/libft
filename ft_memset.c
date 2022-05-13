@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 16:04:05 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/13 20:29:36 by joalmeid         ###   ########.fr       */
+/*   Created: 2022/05/13 16:59:16 by joalmeid          #+#    #+#             */
+/*   Updated: 2022/05/13 19:56:24 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-void	ft_bzero(void *s, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char *dst;
 
 	dst = s;
 	while (n > 0)
 	{
-		*dst = '\0';
+		*dst = (unsigned char) c;
 		n --;
 		*dst ++;
 	}
+	return (dst);
 }
 
 /* void printArray(char *arr, int n)
@@ -46,11 +45,11 @@ int	main(void)
 	int num = sizeof(s);
 	printf("==========original=========\n");
 	printArray(s, num);
-	printf("==========ft_bzero=========\n");
-	ft_bzero(s, ft_strlen(s));
+	printf("==========ft_memset=========\n");
+	ft_memset(s, 126, ft_strlen(s));
 	printArray(s, num);
-	printf("==========ft_bzero=========\n");
-	ft_bzero(s2, 3);
+	printf("==========ft_memset=========\n");
+	ft_memset(s2, 126, 3);
 	printArray(s2, num);
 	return (0);
 } */

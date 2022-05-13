@@ -6,14 +6,14 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:37:00 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/12 11:18:33 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:15:45 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	found;
 

@@ -6,11 +6,11 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 10:57:37 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 11:12:35 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/13 15:07:57 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

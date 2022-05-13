@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:19:47 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/12 16:18:37 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:16:01 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_strncmp(const char *s1,const char *s2, size_t n);
 
 size_t	ft_strlen(const char *s);	
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 
@@ -32,7 +32,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return ((char *) &haystack[i]);
 }
 
-int main(void)
+int	main(void)
 {
 	char *haystack = "vamos testar essa string.";
 	char *needle = "string.";
