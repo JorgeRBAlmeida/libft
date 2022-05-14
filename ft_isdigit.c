@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 10:57:37 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/13 15:07:57 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 13:39:48 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
+	if (c < 48 || c > 57)
+		return (0);
+	return (1);
 }

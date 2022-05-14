@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 16:59:16 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/13 19:56:24 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 14:02:43 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *dst;
+	unsigned char	*dst;
 
-	dst = s;
+	dst = (unsigned char *)s;
 	while (n > 0)
 	{
 		*dst = (unsigned char) c;

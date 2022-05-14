@@ -6,13 +6,11 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:05:09 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/11 15:51:19 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 09:58:03 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
@@ -29,7 +27,7 @@ size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 	return (i);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char dst[20] = "teste";
 	const char *src = "42riosdfsdfsdfsd";
@@ -38,4 +36,4 @@ int	main(void)
 	printf("dst: '%s'\tsrc: '%s'\n", dst, src);
 	rtn = ft_strlcpy(dst, src, 20);
 	printf("dst: '%s'\tretorno ft_strlcpy: '%d'\n", dst, rtn);
-}
+} */

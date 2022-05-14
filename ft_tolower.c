@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:32:56 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 13:49:06 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 12:30:54 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_tolower(int c)
 	return (c_upp);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	c = 0;
 	int		i = 0;
@@ -35,4 +35,4 @@ int	main(void)
 		i ++;
 		c = i;
 	}
-}
+} */

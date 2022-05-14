@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:04:05 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/13 20:29:36 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 13:58:34 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlen(const char *s);
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *dst;
+	unsigned char	*dst;
 
 	dst = s;
 	while (n > 0)

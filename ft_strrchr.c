@@ -6,12 +6,11 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 10:37:00 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/13 16:15:45 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 14:04:32 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -30,10 +29,10 @@ char	*ft_strrchr(const char *s, int c)
 		return (0);
 	while (*s != (char) c)
 		s --;
-	return((char *) s);
+	return ((char *) s);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char *s = "";
 	int	c = 0;
@@ -41,3 +40,4 @@ int	main(void)
 
 	printf("%s\n", result);
 }
+ */

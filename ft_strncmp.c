@@ -6,29 +6,34 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:19:45 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/12 14:20:13 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 14:05:38 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while ((s1[i] == s2[i]) && (i <= n) 
-			&& ((s1[i] != '\0') || (s2[i] != '\0')))
-		i ++;
-	return (s1[i] - s2[i]);
+	while (n && *s1 && *s2 && (*s1 == *s2))
+	{
+		++s1;
+		++s2;
+		--n;
+	}
+	if (n <= 0)
+		return (0);
+	else
+		return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
 /* int	main(void)
 {
 	char	*s1 = "teste124";
-	char	*s2 = "t42rioddsdf";
-	int	result = strncmp(s1, s2, 3);
-	
-	printf("%d", result);
+	char	*s1cp = "teste124";
+	char	*s2 = "teste124sdf";
+	int	result = strncmp(s1, s2, 9);
+	int	ft_result = ft_strncmp(s1cp, s2, 9);
+
+	printf("result strncmp: '%d'\n", result);
+	printf("result ft_strncmp: '%d'", ft_result);
 } */

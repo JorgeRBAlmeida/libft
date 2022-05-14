@@ -6,12 +6,11 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:50:12 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/10 14:53:56 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/14 14:02:13 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {
@@ -39,10 +38,10 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char	*str = "\t\n\v\f\r +123adfsd";
 
 	printf("string: %s; atoi result: %d\n", str, atoi(str));
 	printf("string: %s; ft_atoi result: %d\n", str, ft_atoi(str));
-}
+} */

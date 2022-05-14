@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 13:15:30 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/14 12:30:52 by joalmeid         ###   ########.fr       */
+/*   Created: 2022/05/14 13:32:29 by joalmeid          #+#    #+#             */
+/*   Updated: 2022/05/14 13:37:15 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_isascii(int c)
 {
-	int	c_upp;
-
-	c_upp = c;
-	if (c >= 97 && c <= 122)
-		c_upp -= 32;
-	return (c_upp);
+	if (c < 0 || c > 127)
+		return (0);
+	return (1);
 }
-
-/* int	main(void)
-{
-	char	c = 0;
-	int		i = 0;
-
-	while (i <= 127)
-	{
-		printf("%d char: %c, toupper returns: %c\n", i, c, ft_toupper(c));
-		i ++;
-		c = i;
-	}
-} */
