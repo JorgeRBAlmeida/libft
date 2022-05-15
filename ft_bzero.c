@@ -6,13 +6,11 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 16:04:05 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/14 13:58:34 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/15 15:20:01 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -23,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 	{
 		*dst = '\0';
 		n --;
-		*dst ++;
+		dst ++;
 	}
 }
 
