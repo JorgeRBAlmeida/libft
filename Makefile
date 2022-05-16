@@ -17,17 +17,22 @@ AR		= ar rc
 
 L		= -L. -lft
 
-# ar rc nomelib.a ft_funcs.c
+# ar rc nomelib.a ft_funcs.o
 # cc -Wall -Wetra -Werror main.c -L. -lft
 #ranlib libft.a
+# $(NAME):	${OBJS} lib
+# 			${CC} -o ${NAME} ${OBJS}
 
-CFLAGS	= -Wall -Wetra -Werror
+CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.0}
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
-			cc -o ${NAME} ${OBJS}
+$(NAME):	${OBJS} lib
+			${CC} ${CFLAGS} main.c ${L}
+
+lib:		${OBJS}
+			${AR} ${NAME}.a ${OBJS}
 
 all:		${NAME}
 
@@ -35,8 +40,8 @@ clean:
 			${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${NAME}
+			${RM} ${NAME} ${NAME}.a
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all lib clean fclean re

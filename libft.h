@@ -6,19 +6,18 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 09:45:13 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/15 18:41:11 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/16 11:17:51 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdlib.h>
+# include <stddef.h>
 /* # include <string.h>
 # include <stdio.h>
 # include <ctype.h> */
-
-# include <stddef.h>
-# include <stdlib.h>
 
 /* PART_1 */
 
