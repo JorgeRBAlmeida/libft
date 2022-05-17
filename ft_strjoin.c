@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 09:24:34 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/17 14:35:39 by joalmeid         ###   ########.fr       */
+/*   Created: 2022/05/17 12:22:48 by joalmeid          #+#    #+#             */
+/*   Updated: 2022/05/17 12:46:26 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*sub;
+	size_t	i;
+	size_t	j;
+	char	*join;
 
-	sub = ft_calloc((len + 1), sizeof(*sub));
-	if (sub == NULL)
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	join = ft_calloc((i + j + 1), sizeof(*join));
+	if (join == NULL)
 		return (NULL);
-	ft_memmove(sub, s + start, len);
-	sub[len] = '\0';
-	return (sub);
+	ft_strlcat(join, s1, i + 1);
+	ft_strlcat(join, s2, i + j + 1);
+	return (join);
 }
