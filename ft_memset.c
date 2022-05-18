@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 16:59:16 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/15 15:20:48 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:25:22 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,10 @@ void	*ft_memset(void *s, int c, size_t n)
 	dst = (unsigned char *)s;
 	while (n > 0)
 	{
-		*dst = (unsigned char) c;
+		*dst ++ = (unsigned char) c;
 		n --;
-		dst ++;
 	}
-	return (dst);
+	return (s);
 }
 
 /* void printArray(char *arr, int n)

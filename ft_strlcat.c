@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:42:50 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/14 09:58:15 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/18 13:51:01 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,29 @@
 
 size_t	ft_strlen(const char *s);
 
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
+	size_t		i;
+	size_t		j;
+	char		*d;
+	const char	*s;
 
+	d = dst;
+	s = src;
 	j = 0;
 	i = ft_strlen(dst);
-	if (dstsize > 0)
+	if (i == size - 1)
+		return (i);
+	if (size > 0)
 	{
-		while ((i + j) < dstsize && (src[j] != '\0'))
+		while (s[j] != '\0')
 		{
-			dst[i + j] = src[j];
+			d[i + j] = s[j];
 			j ++;
+			if (i + j == size)
+				break ;
 		}
-		dst[i + j] = '\0';
+		d[i + j] = '\0';
 	}
 	return (i + j);
 }

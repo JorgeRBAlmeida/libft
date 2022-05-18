@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/18 01:13:27 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/18 09:52:55 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+
+void	ft_atoi_test(void)
+{
+	char	*str = "4748143454345936488";
+	/* char	*str = "\t\n\v\f\r +123adfsd"; */
+
+	printf("string: %s; atoi result: %d\n", str, atoi(str));
+	printf("string: %s; ft_atoi result: %d\n", str, ft_atoi(str));
+} 
 
 void	ft_substr_test(void)
 {
@@ -115,6 +124,6 @@ void	ft_strtrim_test(void)
 
 int	main(void)
 {
-	ft_strtrim_test();
+	ft_atoi_test();
 	return (0);
 }

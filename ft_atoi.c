@@ -3,20 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:50:12 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/14 14:02:13 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/18 11:15:52 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+#ifndef MAX_INT
+# define MAX_INT 2147483647
+#endif
+
+#ifndef MIN_INT
+# define MIN_INT - 2147483648
+#endif
+
+static long	overflow_case(long sign)
+{
+	if (sign == 1)
+		return (MAX_INT);
+	else
+		return (MIN_INT);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	sign;
+	long	i;
+	long	result;
+	long	sign;
 
 	i = 0;
 	sign = 1;
@@ -32,6 +48,8 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
+		if (result > MAX_INT / 10 || (result == MAX_INT / 10 && str[i] - '0' > 7))
+			return (overflow_case(sign));
 		result = result * 10 + (str[i] - 48);
 		i ++;
 	}
