@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/17 14:40:31 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/18 01:13:27 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,37 @@ void	ft_strjoin_test(void)
 	printf("result:\t\t'%s'\n", ft_strjoin(s5 + 2, s5 + 6));
 }
 
+void	ft_strtrim_test(void)
+{
+	char	*s1 = "tattattttvtavaernantatat";
+	char	*s2 = "tataaatatttataaatata";
+	char	*s3 = "";
+	char	*s4 = "vern";
+	char	*set = "ta";
+
+	printf("string:\t\t'%s'\n", s1);
+	printf("set:\t\t'%s'\n", set);
+	printf("expected:\t'vtavaernan'\n");
+	printf("result:\t\t'%s'\n", ft_strtrim(s1, set));
+
+	printf("\nstring:\t\t'%s'\n", s2);
+	printf("set:\t\t'%s'\n", set);
+	printf("expected:\t''\n");
+	printf("result:\t\t'%s'\n", ft_strtrim(s2, set));
+
+	printf("\nstring:\t\t'%s'\n", s3);
+	printf("set:\t\t'%s'\n", set);
+	printf("expected:\t''\n");
+	printf("result:\t\t'%s'\n", ft_strtrim(s3, set));
+
+	printf("\nstring:\t\t'%s'\n", s4);
+	printf("set:\t\t'%s'\n", set);
+	printf("expected:\t'vern'\n");
+	printf("result:\t\t'%s'\n", ft_strtrim(s4, set));
+}
+
 int	main(void)
 {
-	ft_strjoin_test();
+	ft_strtrim_test();
 	return (0);
 }
