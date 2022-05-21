@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:50:12 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/18 11:15:52 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:10:32 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 # define MIN_INT - 2147483648
 #endif
 
-static long	overflow_case(long sign)
+/* static long	overflow_case(long sign)
 {
 	if (sign == 1)
 		return (MAX_INT);
 	else
 		return (MIN_INT);
 }
-
+ */
 int	ft_atoi(const char *str)
 {
 	long	i;
@@ -48,13 +48,14 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (result > MAX_INT / 10 || (result == MAX_INT / 10 && str[i] - '0' > 7))
-			return (overflow_case(sign));
 		result = result * 10 + (str[i] - 48);
 		i ++;
 	}
 	return (result * sign);
 }
+
+/* 		if (result > MAX_INT / 10 || (result == MAX_INT / 10 && str[i] - '0' > 7))
+			return (overflow_case(sign)); */
 
 /* int	main(void)
 {
