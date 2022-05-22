@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 09:45:13 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/19 14:53:56 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/22 14:41:11 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <stddef.h>
+# include <unistd.h>
 /* # include <string.h>
 # include <stdio.h>
 # include <ctype.h> */

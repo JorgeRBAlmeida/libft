@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/22 13:12:07 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/22 19:25:52 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,9 +242,97 @@ void	ft_strmapi_test(void)
 	printf("result:\t\t'%s'\n", ft_strmapi(str3, ft_strupper_first));
 }
 
+static void	ft_strupper_first2(unsigned int i, char *c)
+{
+	char	*out = c;
+	if (!ft_isalpha(*out))
+		return ;
+	if ((*out >= 97 && *out <= 122) && i == 0)
+		*out = *out - 32;
+	else if ((*out >= 65 && *out <= 90) && i != 0)
+		*out = *out + 32;
+}
+
+void	ft_striteri_test(void)
+{
+	char	str1[19] = "nEW TeSt for mAPI.";
+	char	str2[15] = "Zs1235;.,/ AAA";
+	char	str3[1] = "";
+
+	printf("str1 before:\t\t'%s'\n", str1);
+	printf("expected:\t\t'New test for mapi.'\n");
+	ft_striteri(str1, ft_strupper_first2);
+	printf("str1 after:\t\t'%s'\n", str1);
+
+	printf("\nstr2 before:\t\t'%s'\n", str2);
+	printf("expected:\t\t'Zs1235;.,/ aaa'\n");
+	ft_striteri(str2, ft_strupper_first2);
+	printf("str2 after:\t\t'%s'\n", str2);
+
+	printf("\nstr3 before:\t\t'%s'\n", str3);
+	printf("expected:\t\t''\n");
+	ft_striteri(str3, ft_strupper_first2);
+	printf("str3 after:\t\t'%s'\n", str3);
+}
+
+void	ft_putchar_fd_test(void)
+{
+	char	s[19] = "testing putchar_fd\n";
+	int		i = -1;
+
+	while (s[++ i])
+		ft_putchar_fd(s[i], 1);
+
+}
+
+void	ft_putstr_fd_test(void)
+{
+	char	s[19] = "testing putstr_fd\n";
+	char	*s2 = NULL;
+
+	ft_putstr_fd(s, 1);
+	ft_putstr_fd(s2, 1);
+}
+
+void	ft_putendl_fd_test(void)
+{
+	char	s[18] = "testing putendl_fd";
+	char	*s2 = NULL;
+
+	ft_putendl_fd(s, 1);
+	ft_putendl_fd(s2, 1);
+}
+
+void	ft_putnbr_fd_test(void)
+{
+	int		n = -2147483648;
+	int		n2 = 1;
+	int		n3 = 0;
+	int		n4 = 2147483647;
+
+	write(1,"expected:\t'-2147483648'", 24);
+	write(1,"\nresult:\t\t ", 11);
+	ft_putnbr_fd(n, 1);
+	ft_putchar_fd('\n', 1);
+
+	write(1,"\nexpected:\t'1'", 15);
+	write(1,"\nresult:\t\t ", 11);
+	ft_putnbr_fd(n2, 1);
+	ft_putchar_fd('\n', 1);
+
+	write(1,"\nexpected:\t'0'", 15);
+	write(1,"\nresult:\t\t ", 11);
+	ft_putnbr_fd(n3, 1);
+	ft_putchar_fd('\n', 1);
+
+	write(1,"\nexpected:\t'2147483647'", 24);
+	write(1,"\nresult:\t\t ", 11);
+	ft_putnbr_fd(n4, 1);
+	ft_putchar_fd('\n', 1);
+}
 
 int	main(void)
 {
-	ft_strmapi_test();
+	ft_putnbr_fd_test();
 	return (0);
 }
