@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/21 18:36:44 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/22 01:53:43 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,8 +189,16 @@ void	ft_split_test(void)
 	i = 0;
 }
 
+void	ft_itoa_test(void)
+{
+	int		n = -2147483648;
+	char	*src = ft_itoa(n);
+
+	printf("%s\n", src);
+}
+
 int	main(void)
 {
-	ft_split_test();
+	ft_itoa_test();
 	return (0);
 }
