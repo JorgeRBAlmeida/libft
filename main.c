@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/22 01:53:43 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/22 13:12:07 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,13 +192,59 @@ void	ft_split_test(void)
 void	ft_itoa_test(void)
 {
 	int		n = -2147483648;
+	int		n2 = 1;
+	int		n3 = 0;
+	int		n4 = 2147483647;
 	char	*src = ft_itoa(n);
+	char	*src2 = ft_itoa(n2);
+	char	*src3 = ft_itoa(n3);
+	char	*src4 = ft_itoa(n4);
 
-	printf("%s\n", src);
+	printf("n1 =\t'%i'\n", n);
+	printf("src1 =\t'%s'\n", src);
+
+	printf("\nn2 =\t'%i'\n", n2);
+	printf("src2 =\t'%s'\n", src2);
+
+	printf("\nn3 =\t'%i'\n", n3);
+	printf("src3 =\t'%s'\n", src3);
+
+	printf("\nn4 =\t'%i'\n", n4);
+	printf("src4 =\t'%s'\n", src4);
+
 }
+
+static char	ft_strupper_first(unsigned int i, char c)
+{
+	if (i == 0 && ft_isalpha(c))
+		return (ft_toupper(c));
+	else if (i != 0 && ft_isalpha(c))
+		return (ft_tolower(c));
+	return (c);
+}
+
+void	ft_strmapi_test(void)
+{
+	char	*str1 = "nEW TeSt for mAPI.";
+	char	*str2 = "Zs1235;.,/ AAA";
+	char	*str3 = "";
+
+	printf("str1:\t\t'%s'\n", str1);
+	printf("expected:\t'New test for mapi.'\n");
+	printf("result:\t\t'%s'\n", ft_strmapi(str1, ft_strupper_first));
+
+	printf("\nstr2:\t\t'%s'\n", str2);
+	printf("expected:\t'Zs1235;.,/ aaa'\n");
+	printf("result:\t\t'%s'\n", ft_strmapi(str2, ft_strupper_first));
+
+	printf("\nstr3:\t\t'%s'\n", str3);
+	printf("expected:\t''\n");
+	printf("result:\t\t'%s'\n", ft_strmapi(str3, ft_strupper_first));
+}
+
 
 int	main(void)
 {
-	ft_itoa_test();
+	ft_strmapi_test();
 	return (0);
 }
