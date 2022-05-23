@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/22 19:25:52 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/23 01:06:30 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,65 @@
 
 void	ft_atoi_test(void)
 {
-	char	*str = "4748143454345936488";
-	/* char	*str = "\t\n\v\f\r +123adfsd"; */
+	char	*str = "92233720368547758084534512";
+	char	*str2 = "\t\n\v\f\r +123adfsd";
+	char	*str3 = "2147483647";
+	char	*str4 = "-2147483648";
+	char	*str5 = "9223372036854775807";
+	char	*str6 = "-9223372036854775808";
 
-	printf("string: %s; atoi result: %d\n", str, atoi(str));
-	printf("string: %s; ft_atoi result: %d\n", str, ft_atoi(str));
+	printf("string1:\t'%s'\natoi result:\t %d\n", str, atoi(str));
+	printf("ft_atoi result:\t %d\n\n", ft_atoi(str));
+
+	printf("string2:\t'\\t\\n\\v\\f\\r +123adfsd'\natoi result:\t %d\n", atoi(str2));
+	printf("ft_atoi result:\t %d\n\n", ft_atoi(str2));
+
+	printf("string3:\t'%s'\natoi result:\t %d\n", str3, atoi(str3));
+	printf("ft_atoi result:\t %d\n\n", ft_atoi(str3));
+
+	printf("string4:\t'%s'\natoi result:\t %d\n", str4, atoi(str4));
+	printf("ft_atoi result:\t %d\n\n", ft_atoi(str4));
+
+	printf("string5:\t'%s'\natoi result:\t %d\n", str5, atoi(str5));
+	printf("ft_atoi result:\t %d\n\n", ft_atoi(str5));
+
+	printf("string6:\t'%s'\natoi result:\t %d\n", str6, atoi(str6));
+	printf("ft_atoi result:\t %d\n\n", ft_atoi(str6));
 } 
+
+static void	print_arr(char *arr, int n)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		printf("%i - %p\tvalue = '%c'\n", i, (void *)&arr[i], arr[i]);
+		i ++;
+	}
+}
+
+void	ft_bzero_test(void)
+{
+	char	s[12] = "teste bzero";
+	char	s2[12] = "teste bzero";
+	char	s3[12] = "teste bzero";
+	int num = sizeof(s);
+	printf("\t=========string=========\n");
+	print_arr(s, num);
+	printf("\tft_bzero n: 3=========\n");
+	printf("\texpected: '\\0\\0\\0te bzero\\0'\n");
+	ft_bzero(s, 3);
+	print_arr(s, num);
+	printf("\tft_bzero n: length=========\n");
+	printf("\texpected: '\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0\\0'\n");
+	ft_bzero(s2, ft_strlen(s2));
+	print_arr(s2, num);
+	printf("\tft_bzero n: length=========\n");
+	printf("\texpected: 'teste bzero\\0'\n");
+	ft_bzero(s3, 0);
+	print_arr(s3, num);
+}
 
 void	ft_substr_test(void)
 {
@@ -333,6 +386,6 @@ void	ft_putnbr_fd_test(void)
 
 int	main(void)
 {
-	ft_putnbr_fd_test();
+	ft_bzero_test();
 	return (0);
 }
