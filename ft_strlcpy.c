@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 15:05:09 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/18 11:27:29 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/24 10:28:04 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,29 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-
-	i = 0;
-	while ((i < dstsize) && (src[i] != '\0'))
+	char *d;
+	const char *s;
+	size_t n;
+	
+	d = dst;
+	s = src;
+	n = dstsize;
+	if (n != 0)
 	{
-		dst[i] = src[i];
-		i ++;
+		while (-- n != 0)
+		{
+			if ((*d ++ = *s ++) == '\0')
+				break;
+		}
 	}
-	if (dstsize > 0)
-		dst[i] = '\0';
-	return (i);
+	if (n == 0)
+	{
+		if (dstsize != 0)
+			*d = '\0';
+		while (*s ++)
+			;
+	}
+	return(s - src - 1);
 }
 
 /* int	main(void)
