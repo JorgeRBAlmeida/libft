@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 21:34:47 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/25 07:34:12 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/25 18:07:52 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include <stdio.h>
 
 static size_t	c_incidence(char *t, char c);
-static void		arrstring_error(char ***arr, size_t *j);
-static char		*arrstring_split(char *t, size_t *i, size_t *y);
+static void		is_error(char ***arr, size_t *j);
+static char		*make_string(char *t, size_t *i, size_t *y);
 
 char	**ft_split(char const *s, char c)
 {
@@ -44,8 +44,8 @@ char	**ft_split(char const *s, char c)
 	{
 		if ((t[i] == c && t[i - 1] != c) || t[i] == '\0')
 		{
-			arr[j] = arrstring_split(t, &i, &y);
-			arrstring_error(&arr, &j);
+			arr[j] = make_string(t, &i, &y);
+			is_error(&arr, &j);
 		}
 		if (t[i] != c)
 			y ++;
@@ -54,7 +54,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-static char	*arrstring_split(char *t, size_t *i, size_t *y)
+static char	*make_string(char *t, size_t *i, size_t *y)
 {
 	size_t	len;
 	size_t	position;
@@ -74,9 +74,7 @@ static size_t	c_incidence(char *t, char c)
 	i = 0;
 	j = 0;
 	if (ft_strlen(t) == 0)
-	{
 		return (0);
-	}
 	while (t[i])
 	{
 		if (t[i] == c)
@@ -86,9 +84,8 @@ static size_t	c_incidence(char *t, char c)
 	return (j + 1);
 }
 
-static void	arrstring_error(char ***arr, size_t *j)
+static void	is_error(char ***arr, size_t *j)
 {
-	
 	if (&arr[*j] == NULL)
 	{
 		while (*j > 0)

@@ -6,13 +6,13 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/24 17:06:40 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/25 18:13:56 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-#include <string.h>
+#include <strings.h>
 #include <ctype.h>
 
 void	ft_atoi_test(void)
@@ -77,6 +77,18 @@ void	ft_bzero_test(void)
 	print_arr(s3, num);
 }
 
+void	ft_strnstr_test(void)
+{
+	char *s1 = "see FF your FF return FF now FF";
+	char *s2 = "FFF";
+	size_t max = strlen(s1);
+	char *i1 = ft_strnstr("lorem ipsum dolor sit amet", "dolor", 0);
+	char *i2 = ft_strnstr(s1, s2, max);
+
+	printf("original:\t%s\n", i1);
+	printf("mine:\t\t%s\n", i2);
+}
+
 void	ft_substr_test(void)
 {
 	char	*s = "testando substr";
@@ -110,6 +122,42 @@ void	ft_substr_test(void)
 	printf("expected:\t''\n");
 	printf("result:\t\t'%s'\n", sub5);
 	printf("length sub:\t%li\n", ft_strlen(sub5));
+}
+
+void	ft_strlcat_test(void)
+{
+	/* char *src = "the cake is a lie !\0I'm hidden lol\r\n"; //19
+	char dst1[0xF00] = "there is no stars in the sky"; //28
+	char dst2[0xF00] = "there is no stars in the sky"; //28
+	size_t dstsize = ft_strlen("the cake is a lie !\0I'm hidden lol\r\n") + 8; //23 */
+
+	char *expec = "rrrrrrlorema\0\0\0";
+	char *dest1 = (char *)malloc(sizeof(*dest1) * 15);
+	memset(dest1, 0, 15);
+	memset(dest1, 'r', 6);
+	dest1[11] = 'a';
+
+	char *dest2 = (char *)malloc(sizeof(*dest2) * 15);
+	memset(dest2, 0, 15);
+	memset(dest2, 'r', 6);
+	dest2[11] = 'a';
+
+	printf("\ndstsize value:\t\t15\n");
+	printf("\nexpected result:\t%s\n\n", expec);
+	printf("\ndst string before:\t%s\n\n", dest1);
+	printf("return ft_strlcat:\t%zu\n", ft_strlcat(dest1, "lorem", 15));
+	printf("dst string result:\t%s\n\n", dest1);
+	
+	printf("\ndst string before:\t%s\n\n", dest2);
+	printf("return strlcat:\t\t%zu\n", strlcat(dest2, "lorem", 15));
+	printf("dst string result:\t%s\n\n", dest2);
+	
+	/* printf("\ndstsize value:\t\t%zu\n", dstsize);
+	printf("\nreturn ft_strlcat:\t%zu\n", ft_strlcat(dst1, src, dstsize));
+	printf("dst string result:\t%s\n\n", dst1);
+	
+	printf("\nreturn strlcat:\t\t%zu\n", strlcat(dst2, src, dstsize));
+	printf("dst string result:\t%s\n\n", dst2); */
 }
 
 void	ft_strjoin_test(void)
@@ -177,13 +225,13 @@ void	ft_strtrim_test(void)
 
 void	ft_split_test(void)
 {
-	char	*s1 = ".ultima..............string.poteiro.nulo.";
+	char	*s1 = "      split       this for   me  !       ";
 	char	*s2 = ".............";
 	char	*s3 = "";
 	char	*s4 = "ultima";
 	char	*s5 = "alllllllllllllllllll.a";
 	char	*s6 = "u";
-	char	c = '.';
+	char	c = ' ';
 	char	**mtx = ft_split(s1, c);
 	char	**mtx2 = ft_split(s2, c);
 	char	**mtx3 = ft_split(s3, c);
@@ -195,7 +243,7 @@ void	ft_split_test(void)
 	printf("string:\t\t'%s'\n", s1);
 	printf("char:\t\t'%c'\n", c);
 	printf("expected:\t'ultima','string','poteiro','nulo'\n");
-	while (mtx[i] != NULL)
+	while (i <= 5)
 	{
 		printf("mtx[%i]:\t\t'%s'\n", i, mtx[i]);
 		i ++;

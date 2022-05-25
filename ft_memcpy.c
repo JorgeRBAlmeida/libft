@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 16:35:15 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/15 15:17:32 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:01:05 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	s = src;
 	d = dst;
+	if (!s && !d && n > 0)
+		return (NULL);
 	while (n)
 	{
 		*d ++ = *s ++;
