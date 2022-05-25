@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:42:50 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/18 13:51:01 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/24 12:42:54 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s);
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+/* size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t		i;
 	size_t		j;
@@ -39,6 +39,38 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		d[i + j] = '\0';
 	}
 	return (i + j);
+} */
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t		n;
+	char		*d;
+	const char	*s;
+
+	s = src;
+	d = dst + ft_strlen(dst);
+	n = size;
+	/* if (*d > d[n - 1])
+	{
+		d[n - 1] = '\0';
+		return (n - 1);
+	} */
+	if (n != 0)
+	{
+		while (-- n > 0)
+		{
+			if ((*d ++ = *s ++) == '\0')
+				break ;
+		}
+	}
+	if (n == 0)
+	{
+		if (size != 0)
+			*d = '\0';
+		while (*s ++)
+			;
+	}
+	return (s - src - 1);
 }
 
 /* int	main(void)

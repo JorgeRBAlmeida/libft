@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:44:53 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/15 18:23:53 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:07:18 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,16 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	void	*out;
+	void		*out;
+	long	total;
 
-	out = malloc(num * size);
+	total = num * size;
+	if (num == 0 || size == 0)
+	{
+		out = malloc(1);
+	}
+	else
+		out = malloc(total);
 	if (out == NULL)
 		return (NULL);
 	ft_bzero(out, size);

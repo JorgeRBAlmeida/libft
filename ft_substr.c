@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 09:24:34 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/23 00:51:03 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/24 16:26:54 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (sub == NULL)
 		return (NULL);
 	ft_memmove(sub, s + start, len);
-	if (start == len)
-	{
-		*sub = '\0';
-		return (sub);
-	}
 	sub[len] = '\0';
 	return (sub);
 }

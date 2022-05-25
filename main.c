@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/23 01:06:30 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/24 17:06:40 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,16 +178,18 @@ void	ft_strtrim_test(void)
 void	ft_split_test(void)
 {
 	char	*s1 = ".ultima..............string.poteiro.nulo.";
-	char	*s2 = "..";
+	char	*s2 = ".............";
 	char	*s3 = "";
 	char	*s4 = "ultima";
-	char	*s5 = "u........a";
+	char	*s5 = "alllllllllllllllllll.a";
+	char	*s6 = "u";
 	char	c = '.';
 	char	**mtx = ft_split(s1, c);
 	char	**mtx2 = ft_split(s2, c);
 	char	**mtx3 = ft_split(s3, c);
 	char	**mtx4 = ft_split(s4, c);
 	char	**mtx5 = ft_split(s5, c);
+	char	**mtx6 = ft_split(s6, c);
 	int		i = 0;
 
 	printf("string:\t\t'%s'\n", s1);
@@ -197,6 +199,7 @@ void	ft_split_test(void)
 	{
 		printf("mtx[%i]:\t\t'%s'\n", i, mtx[i]);
 		i ++;
+		
 	}
 	free(mtx);
 	i = 0;
@@ -207,6 +210,7 @@ void	ft_split_test(void)
 	{
 		printf("mtx2[%i]:\t'%s'\n", i, mtx2[i]);
 		i ++;
+		free(mtx2[i]);
 	}
 	free(mtx2);
 	i = 0;
@@ -217,6 +221,7 @@ void	ft_split_test(void)
 	{
 		printf("mtx3[%i]:\t'%s'\n", i, mtx3[i]);
 		i ++;
+		free(mtx3[i]);
 	}
 	free(mtx3);
 	i = 0;
@@ -227,6 +232,7 @@ void	ft_split_test(void)
 	{
 		printf("mtx4[%i]:\t'%s'\n", i, mtx4[i]);
 		i ++;
+		free(mtx4[i]);
 	}
 	free(mtx4);
 	i = 0;
@@ -237,8 +243,20 @@ void	ft_split_test(void)
 	{
 		printf("mtx5[%i]:\t'%s'\n", i, mtx5[i]);
 		i ++;
+		free(mtx5[i]);
 	}
 	free(mtx5);
+	i = 0;
+	printf("\n\nstring:\t\t'%s'\n", s6);
+	printf("char:\t\t'%c'\n", c);
+	printf("expected:\t'u'\n");
+	while (mtx6[i] != NULL)
+	{
+		printf("mtx6[%i]:\t'%s'\n", i, mtx6[i]);
+		i ++;
+		free(mtx6[i]);
+	}
+	free(mtx6);
 	i = 0;
 }
 
@@ -386,6 +404,6 @@ void	ft_putnbr_fd_test(void)
 
 int	main(void)
 {
-	ft_bzero_test();
+	ft_split_test();
 	return (0);
 }
