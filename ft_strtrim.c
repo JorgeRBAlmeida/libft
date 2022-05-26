@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	frtcut(char const *s1, char const *set);
+static size_t	front_trim(char const *s1, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -21,9 +21,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	lens1;
 	char	*trimmed;
 
-	i = frtcut(s1, set);
 	j = 0;
 	lens1 = ft_strlen(s1 + i);
+	i = front_trim(s1, set);
 	while (lens1 > 0)
 	{
 		while (set[j] != '\0' && s1[lens1 + i - 1] != set[j])
@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 
-static size_t	frtcut(char const *s1, char const *set)
+static size_t	front_trim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;

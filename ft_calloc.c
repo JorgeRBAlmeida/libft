@@ -14,7 +14,7 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	void		*out;
+	void	*out;
 	long	total;
 
 	total = num * size;
