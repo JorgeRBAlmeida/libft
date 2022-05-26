@@ -6,13 +6,13 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:47:17 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/26 15:19:33 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:30:27 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	frtcut(char const *s1, char const *set);
+static size_t	front_trim(char const *s1, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (trimmed);
 }
 
-static size_t	frtcut(char const *s1, char const *set)
+static size_t	front_trim(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
