@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/25 18:13:56 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:13:32 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,18 +196,21 @@ void	ft_strjoin_test(void)
 
 void	ft_strtrim_test(void)
 {
-	char	*s1 = "tattattttvtavaernantatat";
-	char	*s2 = "tataaatatttataaatata";
+	char	*s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n";
+	/* char	*s2 = "tataaatatttataaatata";
 	char	*s3 = "";
 	char	*s4 = "vern";
-	char	*set = "ta";
+	len s1 = 53
+	
+	 */
+	char	*set = " \t\n";
 
 	printf("string:\t\t'%s'\n", s1);
 	printf("set:\t\t'%s'\n", set);
-	printf("expected:\t'vtavaernan'\n");
+	printf("expected:\t''\n");
 	printf("result:\t\t'%s'\n", ft_strtrim(s1, set));
 
-	printf("\nstring:\t\t'%s'\n", s2);
+	/* printf("\nstring:\t\t'%s'\n", s2);
 	printf("set:\t\t'%s'\n", set);
 	printf("expected:\t''\n");
 	printf("result:\t\t'%s'\n", ft_strtrim(s2, set));
@@ -220,17 +223,17 @@ void	ft_strtrim_test(void)
 	printf("\nstring:\t\t'%s'\n", s4);
 	printf("set:\t\t'%s'\n", set);
 	printf("expected:\t'vern'\n");
-	printf("result:\t\t'%s'\n", ft_strtrim(s4, set));
+	printf("result:\t\t'%s'\n", ft_strtrim(s4, set)); */
 }
 
 void	ft_split_test(void)
 {
-	char	*s1 = "      split       this for   me  !       ";
-	char	*s2 = ".............";
+	char	*s1 = "      ultima       string poteiro   nulo  !       ";
+	char	*s2 = "           ";
 	char	*s3 = "";
 	char	*s4 = "ultima";
-	char	*s5 = "alllllllllllllllllll.a";
-	char	*s6 = "u";
+	char	*s5 = "alllllllllllllllllll a";
+	char	*s6 = "u a ";
 	char	c = ' ';
 	char	**mtx = ft_split(s1, c);
 	char	**mtx2 = ft_split(s2, c);
@@ -286,7 +289,7 @@ void	ft_split_test(void)
 	i = 0;
 	printf("\n\nstring:\t\t'%s'\n", s5);
 	printf("char:\t\t'%c'\n", c);
-	printf("expected:\t'u','a'\n");
+	printf("expected:\t'alllllllllllllllllll','a'\n");
 	while (mtx5[i] != NULL)
 	{
 		printf("mtx5[%i]:\t'%s'\n", i, mtx5[i]);
@@ -320,16 +323,16 @@ void	ft_itoa_test(void)
 	char	*src4 = ft_itoa(n4);
 
 	printf("n1 =\t'%i'\n", n);
-	printf("src1 =\t'%s'\n", src);
+	printf("src1 =\t'%s' %zu\n", src, ft_strlen(src));
 
 	printf("\nn2 =\t'%i'\n", n2);
-	printf("src2 =\t'%s'\n", src2);
+	printf("src1 =\t'%s' %zu\n", src2, ft_strlen(src2));
 
 	printf("\nn3 =\t'%i'\n", n3);
-	printf("src3 =\t'%s'\n", src3);
+	printf("src1 =\t'%s' %zu\n", src3, ft_strlen(src3));
 
 	printf("\nn4 =\t'%i'\n", n4);
-	printf("src4 =\t'%s'\n", src4);
+	printf("src1 =\t'%s' %zu\n", src4, ft_strlen(src4));
 
 }
 

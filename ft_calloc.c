@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:44:53 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/24 13:07:18 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/26 10:44:01 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	void		*out;
+	void	*out;
 	long	total;
 
 	total = num * size;
 	if (num == 0 || size == 0)
 	{
-		out = malloc(1);
+		num = 1;
+		size = 1;
 	}
-	else
-		out = malloc(total);
+	out = malloc(total);
 	if (out == NULL)
 		return (NULL);
-	ft_bzero(out, size);
+	ft_bzero(out, total);
 	return (out);
 }

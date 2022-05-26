@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 21:34:47 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/25 18:07:52 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:05:54 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 static size_t	c_incidence(char *t, char c);
 static void		is_error(char ***arr, size_t *j);
 static char		*make_string(char *t, size_t *i, size_t *y);
+static char		**alloc_arr(char ***arr, char *t, const char *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -29,18 +30,9 @@ char	**ft_split(char const *s, char c)
 	y = 0;
 	t = ft_strtrim(s, &c);
 	j = 0;
-	if (t == NULL || s == NULL)
+	if (alloc_arr(&arr, t, s, c) == NULL)
 		return (NULL);
-	if (c_incidence(t, c) == 0)
-	{
-		arr = malloc(1);
-		arr[0] = NULL;
-		return (arr);
-	}
-	arr = ft_calloc((c_incidence(t, c) + 1), sizeof(*arr));
-	if (arr == NULL)
-		return (NULL);
-	while (++ i <= ft_strlen(t))
+	while (++ i <= ft_strlen(t) && c_incidence(t, c) != 0)
 	{
 		if ((t[i] == c && t[i - 1] != c) || t[i] == '\0')
 		{
@@ -54,16 +46,19 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-static char	*make_string(char *t, size_t *i, size_t *y)
+static char	**alloc_arr(char ***arr, char *t, const char *s, char c)
 {
-	size_t	len;
-	size_t	position;
-
-	position = *i;
-	len = *y;
-	*i = *i + 1;
-	*y = 0;
-	return (ft_substr(t, (position - len), len));
+	if (t == NULL || s == NULL)
+		return (NULL);
+	if (c_incidence(t, c) == 0)
+	{
+		*arr = malloc(1);
+		*arr[0] = NULL;
+	}
+	*arr = ft_calloc((c_incidence(t, c) + 1), sizeof(*arr));
+	if (*arr == NULL)
+		return (NULL);
+	return (*arr);
 }
 
 static size_t	c_incidence(char *t, char c)
@@ -82,6 +77,18 @@ static size_t	c_incidence(char *t, char c)
 		i ++;
 	}
 	return (j + 1);
+}
+
+static char	*make_string(char *t, size_t *i, size_t *y)
+{
+	size_t	len;
+	size_t	position;
+
+	position = *i;
+	len = *y;
+	*i = *i + 1;
+	*y = 0;
+	return (ft_substr(t, (position - len), len));
 }
 
 static void	is_error(char ***arr, size_t *j)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 19:39:19 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/22 15:11:10 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/26 11:29:46 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ char	*ft_itoa(int n)
 	long	temp;
 	char	*str;
 
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	i = itoa_nsign(&n);
 	len = itoa_nstrlen(n, i);
-	str = ft_calloc((len + 1), sizeof(str));
+	str = ft_calloc((len + 1), sizeof(*str));
 	if (str == NULL)
 		return (NULL);
 	itoa_putsign(&i, &len, str);
@@ -38,20 +40,8 @@ char	*ft_itoa(int n)
 		len --;
 		i ++;
 	}
-	if (n != -2147483648)
-		str[i] = '\0';
-	if (n == -2147483648)
-		str = "-2147483648";
+	str[i] = '\0';
 	return (str);
-}
-
-static void	itoa_putsign(long *i, long *len, char *str)
-{
-	if (*i)
-	{
-		str[0] = '-';
-		*len = *len - 1;
-	}
 }
 
 static long	itoa_nsign(int *n)
@@ -64,8 +54,6 @@ static long	itoa_nsign(int *n)
 		sign = 1;
 		*n = *n * (-1);
 	}
-	if (*n == -2147483648)
-		sign = 10;
 	return (sign);
 }
 
@@ -82,6 +70,15 @@ static long	itoa_nstrlen(int n, long sign)
 		len ++;
 	}
 	return (len);
+}
+
+static void	itoa_putsign(long *i, long *len, char *str)
+{
+	if (*i)
+	{
+		str[0] = '-';
+		*len = *len - 1;
+	}
 }
 
 static long	power_ten(long times)

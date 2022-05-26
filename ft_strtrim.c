@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:47:17 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/23 00:50:22 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:19:33 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,27 @@ static size_t	frtcut(char const *s1, char const *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	size_t	offset;
 	size_t	j;
-	size_t	lens1;
+	size_t	len_frtcut;
 	char	*trimmed;
 
-	i = frtcut(s1, set);
-	j = 0;
-	lens1 = ft_strlen(s1 + i);
-	while (lens1 > 0)
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return ((char *)s1);
+	offset = frtcut(s1, set);
+	len_frtcut = ft_strlen(s1 + offset);
+	while (len_frtcut > 0)
 	{
-		while (set[j] != '\0' && s1[lens1 + i - 1] != set[j])
+		j = 0;
+		while (set[j] && s1[len_frtcut + offset - 1] != set[j])
 			j ++;
 		if (set[j] == '\0')
 			break ;
-		lens1 --;
+		len_frtcut --;
 	}
-	trimmed = ft_substr(s1, i, lens1);
+	trimmed = ft_substr(s1, offset, len_frtcut);
 	return (trimmed);
 }
 
@@ -46,7 +50,7 @@ static size_t	frtcut(char const *s1, char const *set)
 	while (s1[i])
 	{
 		j = 0;
-		while (set[j] != '\0' && s1[i] != set[j])
+		while (set[j] && s1[i] != set[j])
 			j ++;
 		if (set[j] == '\0')
 			break ;

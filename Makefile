@@ -51,5 +51,6 @@ fclean:		clean
 			${RM} ${NAME} ${NAME}.a ${NAME}.out
 
 re:			fclean all
+			./libft.out
 
 .PHONY:		all lib rlib clean fclean re
