@@ -6,14 +6,14 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:50:12 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/23 00:50:34 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/29 09:35:52 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static long	overflow_case(long result, char c);
-static	long	sign_case(char c, long *sign);
+static	long	has_sign(char c, long *sign);
 
 int	ft_atoi(const char *str)
 {
@@ -26,7 +26,7 @@ int	ft_atoi(const char *str)
 	result = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i ++;
-	if (sign_case(str[i], &sign))
+	if (has_sign(str[i], &sign))
 		i ++;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
@@ -40,7 +40,7 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-static	long	sign_case(char c, long *sign)
+static	long	has_sign(char c, long *sign)
 {
 	if (c == '+')
 		return (1);
