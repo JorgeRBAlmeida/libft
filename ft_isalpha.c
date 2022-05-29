@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 15:28:26 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/14 13:39:27 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/29 10:59:21 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,3 @@ int	ft_isalpha(int c)
 		return (0);
 	return (1);
 }
-
-/* int	main(void)
-{
-	char	c;
-	int		i;
-
-	i = 0;
-	c = 0;
-	while (i <= 127)
-	{
-		printf("%d char: %c isalpha? %i\n", i, c, isalpha(c));
-		printf("%d char: %c ft_isalpha? %i\n", i, c, ft_isalpha(c));
-		i ++;
-		c = i;
-	}
-} */

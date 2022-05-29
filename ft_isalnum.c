@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:13:23 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/14 13:53:32 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/29 10:58:47 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,3 @@ int	ft_isalnum(int c)
 		return (1);
 	return (0);
 }
-
-/* int	main(void)
-{
-	int	c = 0;
-
-	while (ft_isascii(c))
-	{
-		printf("%i - char => %c alnum: %i\n", c, (char)c, ft_isalnum(c));
-		c ++;
-	}
-} */
