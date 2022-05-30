@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:59:09 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/29 22:40:41 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:30:42 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
+	if (!content)
+		return (NULL);
 	new = ft_calloc(1, sizeof(new));
 	if (new == NULL)
 		return (NULL);
