@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 00:49:58 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/30 01:20:52 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:40:44 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*temp;
 
-	temp = *lst->next;
+	temp = (*lst)->next;
 	if (!del || !lst)
 		return ;
 	while (*lst)
 	{
-		temp = *lst->next;
+		temp = (*lst)->next;
 		(*del)(*lst);
 		free(*lst);
 		*lst = temp;

@@ -10,11 +10,9 @@ SRCS	= ft_strchr.c ft_bzero.c ft_strnstr.c \
 
 SRCB	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
-		ft_lstclear.c ft_lstiter.c ft_lstmap
+		ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-OBJB	= ${SRCS:.c=.o} ${SRCB:.c=.o}
-
-OBJS	= ${SRCS:.c=.o}
+OBJS	= ${SRCS:.c=.o} ${SRCB:.c=.o}
 
 NAME	= libft
 
@@ -60,21 +58,6 @@ fclean:		clean
 
 re:			fclean all
 			./libft.out
-
-$(NAMEB):	${OBJB} lib rlib
-			${CC} ${CFLAGS} -o ${NAMEB}.out main.c ${L}
-
-blib:		${OBJB}
-			${AR} ${NAMEB}.a ${OBJB}
-
-brlib:		${NAMEB}.a
-			${RLIB} ${NAMEB}.a
-
-bclean:
-			${RM} ${OBJB}
-
-bfclean:	clean
-			${RM} ${NAMEB} ${NAMEB}.a ${NAMEB}.out
 
 bonus:		bfclean ${NAMEB}
 			./libft.out

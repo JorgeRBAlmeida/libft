@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 01:20:18 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/30 16:08:28 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:43:24 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	content_error(t_list *lst, void (*del)(void *));
-static void	content_change(t_list **lst, void (*f)(void *));
+static void	content_error(t_list **lst, void (*del)(void *));
+static void	content_change(t_list **lst, void *(*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -48,19 +48,19 @@ static void	content_error(t_list **lst, void (*del)(void *))
 {
 	if (*lst)
 	{
-		if (*lst->content == NULL)
+		if ((*lst)->content == NULL)
 		{
-			del(*lst->content);
-			free(*lst->content);
+			del((*lst)->content);
+			free((*lst)->content);
 		}
 	}
 }
 
-static void	content_change(t_list **lst, void (*f)(void *))
+static void	content_change(t_list **lst, void *(*f)(void *))
 {
 	while (*lst)
 	{
-		f(*lst->content);
-		*lst = *lst->next;
+		f((*lst)->content);
+		*lst = (*lst)->next;
 	}
 }

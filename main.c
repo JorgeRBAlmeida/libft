@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/29 20:16:29 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:31:12 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -364,6 +364,8 @@ void	ft_strnstr_test(void)
 	char *s2 = "FF";
 	char *s3 = "lorem ipsum dolor sit amet";
 	char *s4 = "dolor";
+	char *s5 = "aaabcabcd";
+	char *s6 = "aaabc";
 
 	printf("haystack1:\t\t'%s'\n", s1);
 	printf("needle1:\t\t'%s'\n", s2);
@@ -373,7 +375,12 @@ void	ft_strnstr_test(void)
 	printf("haystack2:\t\t'%s'\n", s3);
 	printf("needle2:\t\t'%s'\n", s4);
 	printf("length:\t\t\t'0'\n");
-	printf("result ft_strnstr:\t'%s'\n", ft_strnstr(s3, s4, 0));
+	printf("result ft_strnstr:\t'%s'\n\n", ft_strnstr(s3, s4, 0));
+
+	printf("haystack3:\t\t'%s'\n", s5);
+	printf("needle3:\t\t'%s'\n", s6);
+	printf("length:\t\t\t'5'\n");
+	printf("result ft_strnstr:\t'%s'\n\n", ft_strnstr(s5, s6, 5));
 }
 
 void	ft_substr_test(void)
