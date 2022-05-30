@@ -8,9 +8,17 @@ SRCS	= ft_strchr.c ft_bzero.c ft_strnstr.c \
 		ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+SRCB	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+		ft_lstclear.c ft_lstiter.c ft_lstmap
+
+OBJB	= ${SRCS:.c=.o} ${SRCB:.c=.o}
+
 OBJS	= ${SRCS:.c=.o}
 
 NAME	= libft
+
+NAMEB	= libft
 
 RM		= rm -f
 
@@ -53,4 +61,22 @@ fclean:		clean
 re:			fclean all
 			./libft.out
 
-.PHONY:		all lib rlib clean fclean re
+$(NAMEB):	${OBJB} lib rlib
+			${CC} ${CFLAGS} -o ${NAMEB}.out main.c ${L}
+
+blib:		${OBJB}
+			${AR} ${NAMEB}.a ${OBJB}
+
+brlib:		${NAMEB}.a
+			${RLIB} ${NAMEB}.a
+
+bclean:
+			${RM} ${OBJB}
+
+bfclean:	clean
+			${RM} ${NAMEB} ${NAMEB}.a ${NAMEB}.out
+
+bonus:		bfclean ${NAMEB}
+			./libft.out
+
+.PHONY:		all lib rlib clean fclean re blib brlib bclean bfclean bonus
