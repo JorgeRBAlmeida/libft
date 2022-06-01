@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 00:49:58 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/30 16:40:44 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:50:42 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,12 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*temp;
-
-	temp = (*lst)->next;
 	if (!del || !lst)
 		return ;
 	while (*lst)
 	{
-		temp = (*lst)->next;
-		(*del)(*lst);
+		(*del)((*lst)->content);
 		free(*lst);
-		*lst = temp;
+		*lst = (*lst)->next;
 	}
 }

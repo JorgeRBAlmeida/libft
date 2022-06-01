@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 20:59:09 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/30 15:30:42 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/01 16:04:07 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*new;
 
-	if (!content)
-		return (NULL);
-	new = ft_calloc(1, sizeof(new));
+	new = ft_calloc(1, sizeof(*new));
 	if (new == NULL)
 		return (NULL);
 	new->content = content;

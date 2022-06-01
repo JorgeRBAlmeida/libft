@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:44:53 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/29 10:36:49 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/01 10:17:10 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_calloc(size_t num, size_t size)
 {
 	void	*buffer;
-	long	total;
+	int		total;
 
 	if (num == 0 || size == 0)
 	{

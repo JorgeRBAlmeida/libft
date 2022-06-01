@@ -6,14 +6,14 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 01:20:18 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/30 16:43:24 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/01 17:22:18 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static void	content_error(t_list **lst, void (*del)(void *));
-static void	content_change(t_list **lst, void *(*f)(void *));
+static void ft_lstiter_new(t_list *lst, void *(*f)(void *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -30,18 +30,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (index == 0)
 		{
 			first = ft_lstnew(lst->content);
-			ft_lstadd_front(&first, lst);
 			content_error(&first, del);
 			lst = lst->next;
 			index ++;
 		}
-		after = ft_lstnew(lst->content);
 		ft_lstadd_back(&first, after);
 		content_error(&after, del);
 		lst = lst->next;
 	}
-	content_change(&first, f);
-	return (after);
+	ft_lstiter_new(first, f);
+	if (!first)
+		return (NULL);
+	return (first);
 }
 
 static void	content_error(t_list **lst, void (*del)(void *))
@@ -51,16 +51,18 @@ static void	content_error(t_list **lst, void (*del)(void *))
 		if ((*lst)->content == NULL)
 		{
 			del((*lst)->content);
-			free((*lst)->content);
+			free(*lst);
 		}
 	}
 }
 
-static void	content_change(t_list **lst, void *(*f)(void *))
+static void ft_lstiter_new(t_list *lst, void *(*f)(void *))
 {
-	while (*lst)
+	if (!f)
+		return ;
+	while (lst)
 	{
-		f((*lst)->content);
-		*lst = (*lst)->next;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 22:48:26 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/29 23:46:13 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:26:52 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (lst)
-	{
-		if (*lst)
-			new->next = *lst;
-		else
-			*lst = new;
-	}
+	if (*lst)
+		new->next = *lst;
+	*lst = new;
 }
