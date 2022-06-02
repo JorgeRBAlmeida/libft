@@ -12,54 +12,44 @@ SRCB	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 		ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-OBJS	= ${SRCS:.c=.o} ${SRCB:.c=.o}
+OBJS	= ${SRCS:.c=.o}
+
+OBJB	= ${SRCB:.c=.o}
 
 NAME	= libft
-
-NAMEB	= libft
 
 RM		= rm -f
 
 CC		= cc
 
-AR		= ar rc
+AR		= ar rcs
+
+ARB		= ar qs
 
 L		= -L. -lft
-
-RLIB	= ranlib
-
-# ar rc nomelib.a ft_funcs.o
-# cc -Wall -Wetra -Werror main.c -L. -lft
-#ranlib libft.a
-# $(NAME):	${OBJS} lib
-# 			${CC} -o ${NAME} ${OBJS}
 
 CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME):	${OBJS} lib rlib
-			${CC} ${CFLAGS} -o ${NAME}.out main.c ${L}
+$(NAME):	${OBJS} lib bonus
 
 lib:		${OBJS}
 			${AR} ${NAME}.a ${OBJS}
 
-rlib:		${NAME}.a
-			${RLIB} ${NAME}.a
-
 all:		${NAME}
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${OBJB}
 
 fclean:		clean
-			${RM} ${NAME} ${NAME}.a ${NAME}.out
+			${RM} ${NAME} ${NAME}.a
 
 re:			fclean all
-			./libft.out
 
-bonus:		bfclean ${NAMEB}
-			./libft.out
+bonus:		${OBJB}
+			${ARB} ${NAME}.a ${OBJB}
 
-.PHONY:		all lib rlib clean fclean re blib brlib bclean bfclean bonus
+
+.PHONY:		all lib clean fclean re bonus

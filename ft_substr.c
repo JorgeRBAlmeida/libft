@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 09:24:34 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/26 10:43:11 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:46:10 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	finallen;
 	char	*sub;
 
-	slen = ft_strlen(s);
-	finallen = len;
 	if (!s)
 		return (NULL);
+	slen = ft_strlen(s);
+	finallen = len;
 	if (start >= slen)
 	{
 		sub = malloc(1);

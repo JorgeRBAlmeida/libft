@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 23:46:43 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/06/01 12:29:28 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:33:51 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int	ft_lstsize(t_list *lst)
 		index ++;
 		lst = lst->next;
 	}
-	return(index);
+	return (index);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 00:04:46 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/30 00:47:41 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/02 16:44:08 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		}
 		else
 			*lst = new;
+		new->next = NULL;
 	}
 }

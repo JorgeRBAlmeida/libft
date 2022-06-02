@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: joalmeid <joalmeid@student.42.rio>         +#+  +:+       +#+        */
+/*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 13:50:12 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/29 09:35:52 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:39:13 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static long	overflow_case(long result, char c);
 static	long	has_sign(char c, long *sign);
 
 int	ft_atoi(const char *str)
@@ -30,10 +29,6 @@ int	ft_atoi(const char *str)
 		i ++;
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (overflow_case(result, str[i]) == 1)
-			return (-1);
-		if (overflow_case(result, str[i]) == 2)
-			return (0);
 		result = result * 10 + (str[i] - 48);
 		i ++;
 	}
@@ -50,19 +45,4 @@ static	long	has_sign(char c, long *sign)
 		return (1);
 	}
 	return (0);
-}
-
-static long	overflow_case(long result, char c)
-{
-	long	max;
-	long	min;
-
-	max = 9223372036854775807;
-	min = -9223372036854775807 - 1;
-	if ((result >= (max / 10) && c >= '7') || (result > max))
-		return (1);
-	else if ((result <= (min / 10) && c >= '8') || result < min)
-		return (2);
-	else
-		return (0);
 }

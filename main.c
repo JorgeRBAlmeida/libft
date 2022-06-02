@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:32:24 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/30 18:31:12 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:12:18 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -420,7 +420,7 @@ void	ft_substr_test(void)
 
 void	ft_strlcat_test(void)
 {
-	/* char *src = "the cake is a lie !\0I'm hidden lol\r\n"; //19
+	char *src = "the cake is a lie !\0I'm hidden lol\r\n"; //19
 	char dst1[0xF00] = "there is no stars in the sky"; //28
 	char dst2[0xF00] = "there is no stars in the sky"; //28
 	size_t dstsize = ft_strlen("the cake is a lie !\0I'm hidden lol\r\n") + 8; //23
@@ -451,7 +451,7 @@ void	ft_strlcat_test(void)
 	printf("dst string result:\t%s\n\n", dst1);
 	
 	printf("\nreturn strlcat:\t\t%zu\n", strlcat(dst2, src, dstsize));
-	printf("dst string result:\t%s\n\n", dst2); */
+	printf("dst string result:\t%s\n\n", dst2);
 }
 
 void	ft_strjoin_test(void)
@@ -701,6 +701,6 @@ void	ft_putnbr_fd_test(void)
 
 int	main(void)
 {
-	ft_strnstr_test();
+	/* ft_strnstr_test(); */
 	return (0);
 }

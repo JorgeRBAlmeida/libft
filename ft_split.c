@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 21:34:47 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/06/01 12:18:50 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:56:06 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ char	**ft_split(char const *s, char c)
 
 	i = -1;
 	y = 0;
-	t = ft_strtrim(s, &c);
 	j = 0;
+	t = ft_strtrim(s, &c);
 	if (!alloc_arr(&arr, t, c, s))
 		return (NULL);
 	while (++ i <= ft_strlen(t) && c_incidence(t, c) != 0)

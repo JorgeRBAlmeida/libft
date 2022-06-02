@@ -6,7 +6,7 @@
 /*   By: joalmeid <joalmeid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 10:57:58 by joalmeid          #+#    #+#             */
-/*   Updated: 2022/05/26 12:39:58 by joalmeid         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:43:21 by joalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	index = 0;
+	if (!s)
+		return (NULL);
 	str = ft_calloc((ft_strlen(s) + 1), sizeof(*str));
 	if (str == NULL || f == NULL)
 		return (NULL);
